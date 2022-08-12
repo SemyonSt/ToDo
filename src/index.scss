@@ -1,0 +1,66 @@
+// * - все элементы
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  font-family: 'Roboto', -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.todo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 750px;
+  height: 530px;
+
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 20px #e3e3e3;
+  border-radius: 30px;
+  border: 1px solid #bfddfc;
+  font-size: 14px;
+
+  &__sidebar {
+    background-color: #b7d6fa;
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid #f1f1f1;
+    padding: 60px 20px;
+    border-radius: 18px;
+    height: calc(100% - 120px);
+  }
+}
+
+.field {
+  background: #f1f1f1;
+  border:  1px solid #efefef;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  
+  &:focus {
+    border-color:#71c8eb;
+  }
+}
+
+.button {
+  background: #3ebb85;
+  border-radius: 4px;
+  color: #fff;
+  border: 0;
+  padding: 10px 30px;
+  cursor: pointer;
+
+  &:hover {
+    background: #40af6a;
+  }
+
+  &:active {
+    background: #08a344;
+  }
+}
+

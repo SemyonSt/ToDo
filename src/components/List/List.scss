@@ -1,0 +1,38 @@
+.list {
+    margin-bottom: 30px;
+
+    &__add-button {
+        opacity: 0.4;
+        
+
+        &:hover {
+            opacity: 1;
+        }
+    };
+
+    li {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 12px;
+        margin-bottom: 5px;
+
+        &.active {
+            background: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;    
+        }
+
+        i {
+            display: inline-flex;
+            margin-right: 10px;
+            svg {
+                path {
+                fill: rgb(6, 5, 7)
+                }
+            }
+        }
+
+        
+    }
+}

@@ -2,10 +2,16 @@ import React from "react";
 import classNames from "classnames";
 import Badge from "../Badge";
 
+import removeSvg from '../../assets/img/remove.svg'
 import './List.scss';
 
-const List = ({items, isRemovable, onClick}) => {
-    //console.log(items, isRemovable)
+const List = ({items, isRemovable, onClick, onRemove}) => {
+
+    const removeList = (item) => {
+      if(window.confirm('Вы действительно хотите удалить задачу?')) 
+      onRemove(item)
+    };
+
     return (
     <ul onClick={onClick} className='list'>
         {
@@ -20,8 +26,14 @@ const List = ({items, isRemovable, onClick}) => {
                         <Badge color={item.color}/>
                     )}
                   </i>
-
                   <span>{item.name}</span>
+                  {isRemovable && (
+                    <img className="list__remove-icon" 
+                    src={removeSvg} 
+                    alt="Remove icon" //отображаем иконку (Х) только в списке задач  
+                    onClick={() => removeList(item)}
+                  />) 
+                  }  
             </li>
     ))}
     

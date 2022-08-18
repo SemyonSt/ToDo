@@ -4,7 +4,9 @@ import List from "../List";
 
 import closesvg from '../../assets/img/close.svg'
 
-import './AddListButton.scss'
+import './AddList.scss'
+
+
 const AddListButton = ({colors, onAdd}) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [selectedColor, selectColor] = useState(colors[0].id)

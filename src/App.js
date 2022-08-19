@@ -71,7 +71,7 @@ function App() {
         <AddList onAdd={onAddList} colors={colors} />
 
       </div>
-      <div className="todo__tasks">{lists && <Tasks list={activeItem} />}</div>
+      <div className="todo__tasks">{lists && activeItem && <Tasks list={activeItem} />}</div>
 
     </div>
   );

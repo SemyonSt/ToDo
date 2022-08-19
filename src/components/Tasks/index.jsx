@@ -1,6 +1,10 @@
 import axios from "axios";
 import React from "react";
-import editSvg from '../../assets/img/edit.svg'
+
+import editSvg from '../../assets/img/edit.svg';
+
+
+import AddTaskForm from "./AddTaskForm";
 
 import './Tasks.scss';
 
@@ -50,13 +54,9 @@ const Tasks = ({list, onEditTitle}) => {
                     </div>
                     <input readOnly value={task.text} />
                </div>
-                    ))
-                }
-
-
-               
-            </div>
-            
+                    ))}
+                   <AddTaskForm />
+            </div>       
         </div>
     )
 }

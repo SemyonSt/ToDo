@@ -4,7 +4,7 @@
       font-weight: bold;
       font-size: 32px;
       line-height: 39px;
-      color: #64c4ed;
+      color: #686bcf;
       padding-bottom: 20px;
       border-bottom: 1px solid #bee7e7;
       &:hover {
@@ -21,6 +21,39 @@
             opacity: 0.8;
         }
     }
+    }
+
+    &__form {
+        margin-top: 20px;
+
+        &-block {
+            .button {
+                margin-right: 10px;
+            }
+        }
+
+        &-new {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            img {
+                width: 16px;
+                height: 16px;
+                margin-left: 4px;
+            }
+
+            span {
+                font-size: 16px;
+                margin-left: 19px;
+
+            }
+        }
     }
 
     &__items {

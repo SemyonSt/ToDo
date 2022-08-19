@@ -3,13 +3,10 @@ import axios from 'axios';
 import { List, AddList, Tasks } from './components';
 
 function App() {
-  // const [lists, setLists] = useState(
-  // DB.lists.map(item => {
-  //   item.color = DB.colors.filter(color => color.id === item.colorId)[0].name
-  //   return item
-  // }));
+
   const [lists, setLists] = useState(null);
   const [colors, setColors] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks')
@@ -53,7 +50,7 @@ function App() {
           },
         ]}
         />
-
+        
         {lists ? (
           <List
             items={lists}
@@ -61,6 +58,10 @@ function App() {
               const newLists = lists.filter((item) => item.id !== id); // ищем id, удаляем задачу
               setLists(newLists);
             }}
+            onClickItem={item => {
+              setActiveItem(item)
+            }}
+            activeItem={activeItem}
             isRemovable
           />
         ) : (
@@ -70,7 +71,7 @@ function App() {
         <AddList onAdd={onAddList} colors={colors} />
 
       </div>
-      <div className="todo__tasks">{lists && <Tasks list={lists[1]} />}</div>
+      <div className="todo__tasks">{lists && <Tasks list={activeItem} />}</div>
 
     </div>
   );
